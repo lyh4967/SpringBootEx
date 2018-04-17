@@ -1,7 +1,8 @@
 package org.hoon;
 
-import static org.junit.Assert.fail;
+import java.util.stream.IntStream;
 
+import org.hoon.domain.WebBoard;
 import org.hoon.persistence.WebBoardRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,10 +19,20 @@ import lombok.extern.java.Log;
 @Commit
 public class WebBoardRepositoryTest {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	
 	@Autowired
 	WebBoardRepository repo;
+	
+	@Test
+	public void insertBoardDummies() {
+		IntStream.range(0,300).forEach(i->{
+			WebBoard board=new WebBoard();
+			
+			board.setTitle("Sample Board Title"+i);
+			board.setContent("content Sample.."+i+"Of Board");
+			board.setWriter("user0"+(i%10));
+			
+			repo.save(board);
+		});
+	}
 }
