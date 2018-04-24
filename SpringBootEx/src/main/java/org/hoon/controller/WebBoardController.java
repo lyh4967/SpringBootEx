@@ -15,4 +15,9 @@ public class WebBoardController {
 	public void list() {
 		log.info("list(); called...");
 	}
+	
+	@GetMapping("/login")
+	public void login() {
+		log.info("login(); called...");
+	}
 }
