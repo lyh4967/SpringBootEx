@@ -30,8 +30,6 @@ public class WebBoard {
 	private String title;
 	
 	private String writer;
-	private int viewCnt;
-	private int replyCnt;
 	private String content;
 	
 	@CreationTimestamp

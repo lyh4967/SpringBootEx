@@ -18,6 +18,6 @@ public class WebBoardController {
 	
 	@GetMapping("/login")
 	public void login() {
-		log.info("login(); called...");
+		log.info("login(); called.");
 	}
 }
